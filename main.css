@@ -1,0 +1,271 @@
+:root{
+    --base-color: #C6DDE9;
+    --base-variant: #6694AC;
+    --text-color: #ffffff;
+    --secondary-text: #000;
+    --primary-color: #3A435D;
+    --accent-color: #4A7B94;
+}
+
+.darkmode{
+    --base-color: #181818;
+    --base-variant: #E0E0E0;
+    --text-color: #000;
+    --secondary-text: #ffffff;
+    --primary-color: #000000;
+    --accent-color: #3A435D;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    background-color: var(--base-color);
+}
+
+#theme-switch{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+#theme-switch svg{
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child{
+    display: block;
+}
+/*logo*/
+.logo{
+    position: relative;
+    background-color: var(--base-variant);
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 4px solid var(--accent-color);
+}
+
+.logo img{
+    position: relative;
+}
+
+.about{
+    background-color: var(--text-color);
+    padding: 40px;
+    margin: 40px auto;
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.about:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about h1{
+    font-size: 2rem;
+    color: var(--secondary-text);
+    transition: color 0.3s ease-in-out;
+}
+
+.about p{
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #7a7979;
+    transition: color 0.3s ease-in-out;
+}
+
+.about:hover p{
+    color: var(--secondary-text);
+}
+
+/*subtle fade in effect*/
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about{
+    animation: fadeIn 1s ease-in-out;
+}
+
+/*pet card*/
+.pet{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.pet-card{
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, var(--base-variant), var(--accent-color));
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.pet-name{
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.pic{
+    width: 100%;
+    height: 170px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.pet-info{
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    text-align: left;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+}
+
+.pet-info p{
+    margin: 5px 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+}
+
+.pet-card:hover .pic img{
+    opacity: 0;
+}
+
+.pet-card:hover{
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pet-card:hover .pet-info{
+    opacity: 1;
+    max-height: 200px;
+    visibility: visible;
+}
+
+.pet-info p::before{
+    content: "🐾";
+    font-size: 1rem;
+}
+
+/*.pet-info p:nth-child(1)::before { content: "♀️"; } /* Gender */
+/*.pet-info p:nth-child(2)::before { content: "🐶"; } /* Breed */
+/*.pet-info p:nth-child(3)::before { content: "📅"; } /* DOB */
+/*.pet-info p:nth-child(4)::before { content: "🎂"; } /* Age */
+/*.pet-info p:nth-child(5)::before { content: "📍"; } /* Status */
+
+/*footer*/
+.footer{
+    background-color: var(--base-variant);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer-content p{
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.social-icons{
+    margin: 10px 0;
+}
+
+.social-icons a{
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover{
+    transform: scale(1.5);
+}
+
+/*contact*/
+.footer-content a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.footer-content a:hover{
+    text-decoration: underline;
+}
+
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+    .pet {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pet-card {
+        width: 80%;
+    }
+}
