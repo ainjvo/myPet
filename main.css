@@ -251,15 +251,18 @@ body{
     text-decoration: underline;
 }
 
-
 /*mobile view*/
 @media screen and (max-width: 768px) {
-    .pet {
+    .pet{
         flex-direction: column;
         align-items: center;
     }
 
-    .pet-card {
+    .pet-card{
         width: 80%;
+    }
+
+    .social-icons a{
+        margin: 8px 0;
     }
 }
