@@ -213,12 +213,6 @@ body{
     font-size: 1rem;
 }
 
-/*.pet-info p:nth-child(1)::before { content: "♀️"; } /* Gender */
-/*.pet-info p:nth-child(2)::before { content: "🐶"; } /* Breed */
-/*.pet-info p:nth-child(3)::before { content: "📅"; } /* DOB */
-/*.pet-info p:nth-child(4)::before { content: "🎂"; } /* Age */
-/*.pet-info p:nth-child(5)::before { content: "📍"; } /* Status */
-
 /*footer*/
 .footer{
     background-color: var(--base-variant);
@@ -258,7 +252,7 @@ body{
 }
 
 
-/* Mobile View */
+/*mobile view*/
 @media screen and (max-width: 768px) {
     .pet {
         flex-direction: column;
