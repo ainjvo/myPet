@@ -276,6 +276,11 @@ body{
 
     .about p{
         font-size: 0.9rem;
+        color: var(--secondary-text);
+    }
+
+    .about{
+        animation: none;
     }
 
     .pet{
@@ -287,8 +292,12 @@ body{
         width: 60%;
     }
 
+    .pet-info p{
+        font-size: 15px;
+    }
+
     .social-icons a{
-        margin: 10px 0;
+        margin: 10px 1px;
     }
 }
 
